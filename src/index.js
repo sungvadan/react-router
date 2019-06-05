@@ -26,7 +26,7 @@ const routing = (
       </ul>
       <Switch>
         <Route exact path="/" component={App}></Route>
-        <Route path="/users/:id" component={Users}></Route>
+        <Route exact path="/users" component={Users}></Route>
         <Route path="/contact" component={Contact}></Route>
         <Route component={Notfound}></Route>
       </Switch>
