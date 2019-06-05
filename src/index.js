@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import { Route, Link, BrowserRouter as Router, Switch } from 'react-router-dom'
 import './index.css';
 import App from './App';
 import Users from './Users';
 import Contact from './Contact';
+import Notfound from './notfound';
 import * as serviceWorker from './serviceWorker';
+
 
 
 const routing = (
@@ -22,9 +24,13 @@ const routing = (
           <Link to='/contact'>Contact</Link>
         </li>
       </ul>
-      <Route exact path="/" component={App}></Route>
-      <Route path="/users" component={Users}></Route>
-      <Route path="/contact" component={Contact}></Route>
+      <Switch>
+        <Route exact path="/" component={App}></Route>
+        <Route path="/users/:id" component={Users}></Route>
+        <Route path="/contact" component={Contact}></Route>
+        <Route component={Notfound}></Route>
+      </Switch>
+
     </div>
   </Router>
 )
