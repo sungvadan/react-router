@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import { Route, Link, BrowserRouter as Router } from "react-router-dom";
+import { Route, Link, NavLink, BrowserRouter as Router } from "react-router-dom";
 
 const User = ({ match }) => <p>{match.params.id}</p>
 
